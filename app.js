@@ -1,4 +1,6 @@
 const Telegraf = require('telegraf');
+const express = require("express");
+const app = express();
 // const Markup = require('telegraf/markup');
 // const Extra = require('telegraf/extra');
 const https = require("https");
@@ -9,6 +11,12 @@ bot.start((ctx) => {
 	ctx.reply(`Hello ${ctx.from.first_name}, would you like to know Weather? Please send the name of the city you want to know its weather`)
 })
 bot.help((ctx) => ctx.reply('Send me the name of the city you want to know its weather condition today.'))
+
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+app.listen(port, function () { console.log("Server Started successfully"); });
 
 // bot.on('sticker', (ctx) => {
 // 	ctx.reply("bla bla"); 
