@@ -1,38 +1,47 @@
 const Telegraf = require('telegraf');
-const Markup = require('telegraf/markup');
-const Extra = require('telegraf/extra');
+// const Markup = require('telegraf/markup');
+// const Extra = require('telegraf/extra');
 const https = require("https");
 require('dotenv').config();
 const bot = new Telegraf(process.env.BOT_TOKEN);
-
 
 bot.start((ctx) => {
 	ctx.reply(`Hello ${ctx.from.first_name}, would you like to know Weather? Please send the name of the city you want to know its weather`)
 })
 bot.help((ctx) => ctx.reply('Send me the name of the city you want to know its weather condition today.'))
+
+// bot.on('sticker', (ctx) => {
+// 	ctx.reply("bla bla"); 
+// })
+
+
+
 bot.on('text', (ctx) => {
 	const cityName = ctx.message.text;
+
 	var url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${process.env.OPEN_WEAThER_TOKEN}`;
-	https.get(url, function (response) {
+
+	https.get(url, (response) =>  {
 		if (response.statusCode === 200) {
-			response.on("data", function (data) {
-				console.log(JSON.parse(data));
+			response.on("data", (data) =>  {
+				// console.log(JSON.parse(data));
 				var result = JSON.parse(data);
 				const cityName = result.name;
 				const temp = result.main.temp;
 				const des = result.weather[0].description;
 				const conditionIcon = result.weather[0].icon;
+				console.log(conditionIcon);
 				const imageUrl = "https://openweathermap.org/img/wn/" + conditionIcon + "@4x.png";
 				ctx.replyWithPhoto({
 					url: imageUrl
-				}, {
-					caption: `City: <b>${cityName}</b>\nTemperature: <b>${temp} c</b> \nDescription: <b>${des}</b> `,
+				},{
+					caption: `City: <b>${cityName}</b>\nTemperature: <b>${temp} c</b> \nDescription: <b>${des}</b>`,
 					parse_mode: 'html'
 				}
 				);
 			});
 		} else {
-			ctx.reply(`${cityName} is not a city name.`)
+			ctx.reply(`${cityName} is not a city name.`);
 		}
 	});
 });
