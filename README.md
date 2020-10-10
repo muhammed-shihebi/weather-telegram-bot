@@ -2,7 +2,7 @@
 This is a simple Telegram bot that helps you know the current weather of a city.
 To use the bot in Telegram search for <a href="https://t.me/SehebiWthrBot">@SehebiWthrBot</a> click start and then send the name of the city and a message with the weather detail will be returned.
 
-## The following technologies and APIs were used to realize this project: : 
+## The following technologies and APIs were used to realize this project:
 * Node.js
 * Express.js
 * Telegraf.js
@@ -12,7 +12,7 @@ To use the bot in Telegram search for <a href="https://t.me/SehebiWthrBot">@Sehe
 ## Screenshots
 ![Screen 1](screenshots/sehebi-weather-bot.jpg?raw=true "Title")
 
-### About me
+### My personal website
 https://www.sehebi.com
-### Contact
+### Want to connect?
 https://www.sehebi.com/contact-me
