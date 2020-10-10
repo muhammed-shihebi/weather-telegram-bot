@@ -8,7 +8,7 @@ require('dotenv').config();
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
 bot.start((ctx) => {
-	ctx.reply(`Hello ${ctx.from.first_name}, would you like to know Weather? Please send the name of the city you want to know its weather`)
+	ctx.reply(`Hello ${ctx.from.first_name}, would you like to know the Weather? Please send the name of the city in which you want to know the weather`)
 })
 bot.help((ctx) => ctx.reply('Send me the name of the city you want to know its weather condition today.'))
 
