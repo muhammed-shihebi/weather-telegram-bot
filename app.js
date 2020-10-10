@@ -15,7 +15,6 @@ bot.help((ctx) => ctx.reply('Send me the name of the city you want to know its w
 // })
 
 
-
 bot.on('text', (ctx) => {
 	const cityName = ctx.message.text;
 
@@ -30,7 +29,6 @@ bot.on('text', (ctx) => {
 				const temp = result.main.temp;
 				const des = result.weather[0].description;
 				const conditionIcon = result.weather[0].icon;
-				console.log(conditionIcon);
 				const imageUrl = "https://openweathermap.org/img/wn/" + conditionIcon + "@4x.png";
 				ctx.replyWithPhoto({
 					url: imageUrl
