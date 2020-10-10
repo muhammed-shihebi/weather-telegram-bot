@@ -17,8 +17,4 @@ https://www.sehebi.com
 ### Some other nice projects 
 https://www.sehebi.com/projects
 ### Want to connect?
-<<<<<<< HEAD
 https://www.sehebi.com/contact-me
-=======
-https://www.sehebi.com/contact-me
->>>>>>> 79a0bae58845ed1b72cd1c439e606e55de6b6dad
