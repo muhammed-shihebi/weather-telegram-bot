@@ -15,4 +15,8 @@ To use the bot in Telegram search for <a href="https://t.me/SehebiWthrBot">@Sehe
 ### My personal website
 https://www.sehebi.com
 ### Want to connect?
+<<<<<<< HEAD
 https://www.sehebi.com/contact-me
+=======
+https://www.sehebi.com/contact-me
+>>>>>>> 79a0bae58845ed1b72cd1c439e606e55de6b6dad

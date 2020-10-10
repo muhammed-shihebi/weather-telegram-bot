@@ -14,7 +14,7 @@ bot.help((ctx) => ctx.reply('Send me the name of the city you want to know its w
 
 let port = process.env.PORT;
 if (port == null || port == "") {
-  port = 3000;
+	port = 3000;
 }
 app.listen(port, function () { console.log("Server Started successfully"); });
 
@@ -28,9 +28,9 @@ bot.on('text', (ctx) => {
 
 	var url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${process.env.OPEN_WEAThER_TOKEN}`;
 
-	https.get(url, (response) =>  {
+	https.get(url, (response) => {
 		if (response.statusCode === 200) {
-			response.on("data", (data) =>  {
+			response.on("data", (data) => {
 				// console.log(JSON.parse(data));
 				var result = JSON.parse(data);
 				const cityName = result.name;
@@ -40,7 +40,7 @@ bot.on('text', (ctx) => {
 				const imageUrl = "https://openweathermap.org/img/wn/" + conditionIcon + "@4x.png";
 				ctx.replyWithPhoto({
 					url: imageUrl
-				},{
+				}, {
 					caption: `City: <b>${cityName}</b>\nTemperature: <b>${temp} c</b> \nDescription: <b>${des}</b>`,
 					parse_mode: 'html'
 				}
