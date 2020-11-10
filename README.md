@@ -6,7 +6,6 @@ To use the bot in Telegram search for <a href="https://t.me/SehebiWthrBot">@Sehe
 * Node.js
 * Express.js
 * Telegraf.js
-* Heroku
 * OpenWeather API 
 
 ## Screenshots
